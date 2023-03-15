@@ -24,7 +24,16 @@ root.render(
     }
     </Routes> */}
     <Routes>
-      <Route path='/' element={<LoginCompoent></LoginCompoent>}></Route>
+      {/* <Route path='/' element={<LoginCompoent></LoginCompoent>}></Route> */}
+      {
+      routes.map((value,key)=>{
+        if(value.exact) {
+          return <Route exact path={value.path} element={<value.component></value.component>} key={key} />
+        }else {
+            return <Route path={value.path} element={<value.component></value.component>} key={key} />
+        }
+      })
+    }
     </Routes>
   </Router>,
 );

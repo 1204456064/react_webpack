@@ -1,10 +1,11 @@
 import ButtonCompoent from "../views/components/button";
 import TableCompoent from "../views/components/table";
+import Login from "../views/login/login"
 import App from "../App";
 const routes = [
     {
         path:'/',
-        component: App,
+        component: Login,
         exact: true
     },
     {
