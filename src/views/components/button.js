@@ -23,7 +23,6 @@ function ButtonCompoent(){
             <Button type="link">Link Button</Button>
             <Button>我是按钮组件哦</Button>
             <Button type="primary" onClick={layout}>退出登录</Button>
-
         </div>
     )
 }

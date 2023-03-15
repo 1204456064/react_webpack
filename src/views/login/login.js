@@ -2,9 +2,12 @@ import { Form } from "antd";
 import { Input } from "antd";
 import { Checkbox } from "antd";
 import { Button } from "antd";
-import React from "react"; 
+import React, { useCallback } from "react"; 
 import request from "../../utils/request";
 import { useNavigate } from "react-router-dom";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+import { options } from "./options";
 import './login.css'
 
 
@@ -12,6 +15,14 @@ function App(){
     const [ form ] = Form.useForm()
 
     const navigate = useNavigate()
+
+    // 粒子效果的回调
+    const particlesInit = useCallback(async (engine) => {
+        await loadFull(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async (container) => {}, []);
+
     async function loginForm(){
         console.log(form.getFieldValue());
         const res = await request.post("/system/user/manage/login", {
@@ -26,8 +37,16 @@ function App(){
     const onFinish = async(values) => {
             
       };
-    return (    
+    return (  
+          
     <div className="login">
+         <Particles
+        height={document.documentElement.clientHeight + ""}
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={options}
+      ></Particles>
     <div className="content">
     <Form  
         form={ form }

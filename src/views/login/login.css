@@ -32,9 +32,10 @@ body {
     background-clip: padding-box;
     width: 500px;
     padding: 15px 35px 15px 35px;
-    background-color: #ffc0cb;
+    background-color: white;
     border: 1px solid blueviolet;
     box-shadow: 0 0 25px #f885ff;
+    z-index: 0;
   }
 
   .login-button {
